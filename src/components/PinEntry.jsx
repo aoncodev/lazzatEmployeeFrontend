@@ -38,7 +38,7 @@ const PinEntry = ({ onPinSubmit }) => {
     if (pinString.length === 4) {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/employee/${pinString}`
+          `http://3.36.115.48:5000/api/employee/${pinString}`
         );
         if (response.ok) {
           const employee = await response.json();

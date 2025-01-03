@@ -15,7 +15,7 @@ export default function Dashboard({ employeeId, onLogout }) {
   const fetchStatus = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/${employeeId}/status`
+        `http://3.36.115.48:5000/api/${employeeId}/status`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch status");
@@ -31,7 +31,7 @@ export default function Dashboard({ employeeId, onLogout }) {
   const fetchEmployee = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/employee/${employeeId}`
+        `http://3.36.115.48:5000/api/employee/${employeeId}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch employee data");
@@ -48,7 +48,7 @@ export default function Dashboard({ employeeId, onLogout }) {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/api/${employeeId}/${action}`,
+        `http://3.36.115.48:5000/api/${employeeId}/${action}`,
         {
           method: "POST",
         }

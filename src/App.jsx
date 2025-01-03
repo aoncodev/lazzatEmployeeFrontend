@@ -27,7 +27,7 @@ export default function App() {
   const handlePinSubmit = async (pin) => {
     try {
       const employeeResponse = await fetch(
-        `http://localhost:5000/api/employee/${pin}`
+        `http://3.36.115.48:5000/api/employee/${pin}`
       );
 
       if (employeeResponse.ok) {

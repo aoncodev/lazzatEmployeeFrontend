@@ -34,7 +34,7 @@ export function AdminDashboard({ onLogout }) {
   const fetchEmployees = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/employee");
+      const response = await fetch("http://3.36.115.48:5000/api/employee");
       if (!response.ok) throw new Error("Failed to fetch employees");
       const data = await response.json();
       setEmployees(data);
@@ -49,7 +49,7 @@ export function AdminDashboard({ onLogout }) {
   const fetchEmployeeStats = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/stats");
+      const response = await fetch("http://3.36.115.48:5000/api/stats");
       if (!response.ok) throw new Error("Failed to fetch employees");
       const data = await response.json();
       setEmployeesStats(data);
@@ -63,7 +63,7 @@ export function AdminDashboard({ onLogout }) {
 
   const fetchTodayClockStatus = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/today");
+      const response = await fetch("http://3.36.115.48:5000/api/today");
       if (!response.ok) throw new Error("Failed to fetch today's clock status");
       const data = await response.json();
       setTodayClockStatus(data);
@@ -106,7 +106,7 @@ export function AdminDashboard({ onLogout }) {
         role: newEmployee.role || "employee",
       };
 
-      const response = await fetch("http://localhost:5000/api/employee", {
+      const response = await fetch("http://3.36.115.48:5000/api/employee", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(employeeData),
@@ -136,7 +136,7 @@ export function AdminDashboard({ onLogout }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/employee/${employeeID}`,
+        `http://3.36.115.48:5000/api/employee/${employeeID}`,
         {
           method: "DELETE",
         }
